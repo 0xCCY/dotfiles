@@ -1,0 +1,49 @@
+#!/usr/bin/env bash 
+
+apt_packages = "zsh"
+
+###############################################################################
+# Helper Functions
+############################################################################### 
+
+function install_packages {
+    sudo apt-get update && sudo apt-get install -y ${apt_packages}
+}
+
+function display_packages {
+    echo "${apt_packages}"
+}
+
+function customize {
+    # Set ZSH as default shell
+    sudo chsh -s $(which zsh)
+
+    # Install Oh My Zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    #  Install power10k theme
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+}
+
+
+###############################################################################
+# Install packages and customize
+############################################################################### 
+cat << EOF
+
+Another day, another new project. Installing all your favourite tools:
+
+$(display_packages)
+
+*No Linux distro was hurt in the process.
+
+EOF
+
+read -rsn1 -p "Press any key to continue"
+
+#installation starts here
+install_packages
+customize
+
+
