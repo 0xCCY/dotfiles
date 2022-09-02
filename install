@@ -1,5 +1,4 @@
 #!/usr/bin/env bash 
-
 apt_packages="zsh"
 
 ###############################################################################
@@ -7,7 +6,7 @@ apt_packages="zsh"
 ############################################################################### 
 
 function install_packages {
-    sudo apt-get update && sudo apt install -y ${apt_packages}
+    sudo apt-get update && sudo apt-get install -y ${apt_packages}
 }
 
 function display_packages {
@@ -34,7 +33,7 @@ cat << EOF
 
 Another day, another new project. Installing all your favourite tools:
 
-$(display_packages)
+${display_packages}
 
 *No Linux distro was hurt in the process.
 
