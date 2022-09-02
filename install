@@ -1,13 +1,13 @@
 #!/usr/bin/env bash 
 
-apt_packages = "zsh"
+apt_packages="zsh"
 
 ###############################################################################
 # Helper Functions
 ############################################################################### 
 
 function install_packages {
-    sudo apt-get update && sudo apt-get install -y ${apt_packages}
+    sudo apt-get update && sudo apt install -y ${apt_packages}
 }
 
 function display_packages {
