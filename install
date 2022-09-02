@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 
-apt_packages="zsh"
+apt_packages="zsh git"
 
 ###############################################################################
 # Helper Functions
