@@ -34,7 +34,7 @@ cat << EOF
 
 Another day, another new project. Installing all your favourite tools:
 
-${display_packages}
+$(display_packages)
 
 *No Linux distro was hurt in the process.
 
