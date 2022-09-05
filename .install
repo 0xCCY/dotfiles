@@ -19,12 +19,13 @@ function customize {
     sudo chsh -s $(which zsh)
 
     # Install Oh My Zsh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
     #  Install power10k theme
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
     echo "Done setting up customization..."
+    exec zsh
 }
 
 function setup_config {
@@ -55,7 +56,7 @@ Another day, another new project. Installing all your favourite tools:
 
 $(display_packages)
 
-*No Linux distro was hurt in the process.
+---No Linux distro was hurt during the process.---
 
 EOF
 
