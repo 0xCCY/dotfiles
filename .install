@@ -25,7 +25,6 @@ function customize {
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
     echo "Done setting up customization..."
-    exec zsh
 }
 
 function setup_config {
@@ -66,3 +65,4 @@ read -rsn1 -p "Press any key to continue"
 install_packages
 customize
 setup_config
+exec zsh
