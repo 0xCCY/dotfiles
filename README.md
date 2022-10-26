@@ -23,6 +23,11 @@ There are two ways to add new packages:
 - Add the package name to the variable `apt_packages`
 - Add in the installation commands in the `customize()` function. (Some packages like Oh My Zsh cannot be install via apt-get)
 
+Config files other than install.sh will be copied into `$HOME` directory and tracked using a *working tree* in the `config` folder.
+
+It works like a git repo, so all git commands like `git add`, `git pull`, `git push` is useable for version controlling. This method is inspired by a comment on [Hacker News](https://news.ycombinator.com/item?id=11071754) and a further explanation [here from Atlassian](https://www.atlassian.com/git/tutorials/dotfiles).
+
+
 ## 2. .zshrc
 This is where ZSH config is stored, mostly Alias.
 
