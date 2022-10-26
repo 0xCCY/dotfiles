@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Add apt-get packages to install here or in customize() function.
-apt_packages="zsh git"
+apt_packages="zsh git tmux"
 
 ###############################################################################
 # Helper Functions
@@ -24,6 +24,10 @@ function customize {
 
     #  Install power10k theme
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    
+    tmux source ~/.tmux.conf
 
     echo "Done setting up customization..."
 }
