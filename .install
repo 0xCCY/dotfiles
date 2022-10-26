@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Add apt-get packages to install here or in customize() function.
 apt_packages="zsh git"
 
 ###############################################################################
@@ -30,6 +31,7 @@ function customize {
 function setup_config {
     git clone --bare https://github.com/0XCCY/dotfiles.git $HOME/.cfg
     mkdir -p .config-backup
+    alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
     config checkout
     if [ $? = 0 ]; then
         echo "Checked out config."
@@ -42,9 +44,10 @@ function setup_config {
     echo "Done setting up config files..."
 }
 
-function config {
-    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
-}
+# Use alias instead so can push and pull.
+# function config {
+#     /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
+# }
 
 ###############################################################################
 # Install packages and customize
