@@ -48,10 +48,9 @@ function setup_config {
     echo "Done setting up config files..."
 }
 
-# Use alias instead so can push and pull.
-# function config {
-#     /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
-# }
+function config {
+    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
+}
 
 ###############################################################################
 # Install packages and customize
